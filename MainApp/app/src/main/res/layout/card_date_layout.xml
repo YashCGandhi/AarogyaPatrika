@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/myCardView"
+    android:id="@+id/dateCardView"
+    android:visibility="visible">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relCut"
+        android:layout_below="@+id/radioMethod"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/datesLayout"
+            android:orientation="vertical">
+
+        </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddDate"
+            android:text="Add date"
+            app:cornerRadius="20dp"
+            android:layout_below="@+id/datesLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:paddingVertical="10dp"
+            android:layout_alignParentRight="true"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+            android:textSize="16dp"
+            app:icon="@drawable/ic_add_black_24dp"
+            android:textStyle="bold"
+            android:textAllCaps="false">
+        </com.google.android.material.button.MaterialButton>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

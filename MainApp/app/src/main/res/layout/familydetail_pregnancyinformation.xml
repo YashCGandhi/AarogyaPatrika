@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/pregnancyDetailLayout"
+    android:visibility="visible">
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddPregnancy"
+        android:text="गर्भवती जोडा (Add Pregnancy)"
+        android:visibility="gone"
+        android:layout_gravity="right"
+        app:cornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:paddingVertical="10dp"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+        android:textSize="16dp"
+        app:icon="@drawable/ic_add_black_24dp"
+        android:textStyle="bold"
+        android:textAllCaps="false">
+    </com.google.android.material.button.MaterialButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textPregnantWoman"
+        android:text="गर्भवती स्त्री (Pregnant Woman)"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"
+        android:paddingVertical="3dp"
+        style="@style/QText"
+        android:textStyle="bold">
+    </TextView>
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/pregnantNameMultiSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"
+        android:text="गर्भवती महिला निवडा (Select Pregnant Woman)"
+        android:textSize="18dp"
+        android:textColorHint="@color/fullBlack"
+        android:textColor="@color/fullBlack">
+    </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:id="@+id/pregnancyInformationNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pregnantDetailViewLayout"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textPregnancyDetail"
+                android:text="गरोदरपणाचा तपशील (Pregnancy Details)"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/fullBlack"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp">
+            </TextView>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_below="@+id/textPregnancyDetail"
+                android:id="@+id/newPregnantSpinnerLinearLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newTextPregnantWoman"
+                    android:text="गर्भवती स्त्री (Pregnant Woman)"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    style="@style/QText"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/newPregnantNameMultiSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="सभासद निवडा (Select Member)"
+                    android:textSize="18sp"
+                    android:textColorHint="@color/fullBlack"
+                    android:textColor="@color/fullBlack">
+                </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+            </LinearLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="para"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/newPregnantSpinnerLinearLayout"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editParaLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editParaValue"
+                    android:inputType="number"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Pregnant Woman Name"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--                app:errorEnabled="true"-->
+<!--                app:helperTextEnabled="false"-->
+<!--                android:layout_marginTop="3dp"-->
+<!--                android:layout_below="@+id/editParaLayout"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:id="@+id/editPregnantNameLayout">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/editPregnantName"-->
+<!--                    android:inputType="textPersonName"-->
+<!--                    style="@style/QText">-->
+<!--                </com.google.android.material.textfield.TextInputEditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+            
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="मागील गर्भधारणेमध्ये गुंतागुंत (Complications Previous Pregnancy)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/editParaLayout"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editComplicationsPreviousPregnancyLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editComplicationsPreviousPregnancy"
+                    android:inputType="text"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="शेवटची मासिक तारीख (Last Menstrual Date)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/editComplicationsPreviousPregnancyLayout"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editLastMenstrualDateLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editLastMenstrualDate"
+                    android:inputType="date"
+                    android:focusableInTouchMode="false"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="वितरणाची अपेक्षित तारीख (Expected Date Delivery)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/editLastMenstrualDateLayout"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editExpectedDateDeliveryLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editExpectedDateDelivery"
+                    android:inputType="date"
+                    android:focusableInTouchMode="false"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="अपेक्षित वितरण स्थान (Expected Place Delivery)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/editExpectedDateDeliveryLayout"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editExpectedPlaceDeliveryLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editExpectedPlaceDelivery"
+                    android:inputType="text"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDeliveryDetails"
+                android:layout_below="@+id/editExpectedPlaceDeliveryLayout"
+                android:text="वितरण तपशील (Delivery Details)"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                style="@style/QText"
+                android:textSize="20dp"
+                android:textStyle="bold">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textPregnancyType"
+                android:layout_below="@+id/textDeliveryDetails"
+                android:text="गर्भधारणेचा प्रकार (Pregnancy type)"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="5dp"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/textPregnancyType"
+                android:layout_marginTop="1dp"
+                android:id="@+id/radioPregnancyTypeRadioGroup"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioButtonPregnancyTypeNormal"
+                        android:text="सामान्य प्रसूती"
+                        android:layout_marginHorizontal="10dp"
+                        android:padding="2dp"
+                        style="@style/QText">
+                    </RadioButton>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/radioButtonPregnancyTypeLSCS"
+                        android:text="सिझरियन प्रसूती"
+                        android:layout_marginHorizontal="10dp"
+                        android:padding="2dp"
+                        style="@style/QText">
+                    </RadioButton>
+
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radioButtonPregnancyTypeOther"
+                            android:text="इतर"
+                            android:layout_marginHorizontal="10dp"
+                            android:padding="2dp"
+                            style="@style/QText">
+                        </RadioButton>
+
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="इतर"
+                android:layout_weight="1"
+                android:layout_below="@+id/radioPregnancyTypeRadioGroup"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="3dp"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editPregnancyTypeOtherLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editPregnancyTypeOther"
+                    android:inputType="text"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textOutcomeOfPregnancy"
+                android:text="गर्भधारणेचा निकाल (Outcome of pregnancy)"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                style="@style/QText"
+                android:layout_below="@id/editPregnancyTypeOtherLayout"
+                android:textStyle="bold"></TextView>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/textOutcomeOfPregnancy"
+                android:layout_marginTop="1dp"
+                android:id="@+id/radioGroupOutcomeOfPregnancy"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButtonOutcomeMale"
+                    android:text="पुरुष"
+                    android:layout_marginHorizontal="10dp"
+                    android:padding="2dp"
+                    style="@style/QText">
+                </RadioButton>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButtonOutcomeFemale"
+                    android:text="स्त्री"
+                    android:layout_marginHorizontal="10dp"
+                    android:padding="2dp"
+                    style="@style/QText">
+                </RadioButton>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/radioButtonOutcomeOther"
+                    android:text="इतर"
+                    android:layout_marginHorizontal="10dp"
+                    android:padding="2dp"
+                    style="@style/QText">
+                </RadioButton>
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/pregnancyPmmvyDetailsLinearLayout"
+                android:layout_below="@+id/radioGroupOutcomeOfPregnancy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textPmmvyDetails"
+                    android:layout_below="@+id/editOutcomeOfPregnancyLayout"
+                    android:text="PMMVY तपशील (PMMVY Details)"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    android:textSize="20dp"
+                    style="@style/QText"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="नोंदणी दिनांक (Registration Date)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    app:errorEnabled="true"
+                    app:helperTextEnabled="false"
+                    android:layout_marginTop="3dp"
+                    android:layout_below="@+id/textPmmvyDetails"
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/editPmmvyRegistrationDateLayout">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editPmmvyRegistrationDate"
+                        android:inputType="date"
+                        android:focusableInTouchMode="false"
+                        style="@style/QText">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="सहा महिन्याच्या भेटीची तारीख (Six Month Visit Date)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    app:errorEnabled="true"
+                    app:helperTextEnabled="false"
+                    android:layout_marginTop="3dp"
+                    android:layout_below="@+id/editPmmvyRegistrationDateLayout"
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/editPmmvySixMonthVisitDateLayout">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editPmmvySixMonthVisitDate"
+                        android:inputType="date"
+                        android:focusableInTouchMode="false"
+                        style="@style/QText">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="पेंटा 3 तारीख (Penta 3 Date)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    app:errorEnabled="true"
+                    app:helperTextEnabled="false"
+                    android:layout_marginTop="3dp"
+                    android:layout_below="@+id/editPmmvySixMonthVisitDateLayout"
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/editPmmvyPenta3DateLayout">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editPmmvyPenta3Date"
+                        android:inputType="date"
+                        android:focusableInTouchMode="false"
+                        style="@style/QText">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/pregnancyJsyDetailsLinearLayout"
+                android:layout_below="@+id/pregnancyPmmvyDetailsLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textJsyDetails"
+                    android:layout_below="@+id/editPmmvyPenta3DateLayout"
+                    android:text="JSY तपशील (JSY Details)"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    style="@style/QText"
+                    android:textSize="20dp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="देय रक्कम (Paid Amount)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    app:errorEnabled="true"
+                    app:helperTextEnabled="false"
+                    android:layout_marginTop="3dp"
+                    android:layout_below="@+id/textJsyDetails"
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/editJsyPaidAmtLayout">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editJsyPaidAmt"
+                        android:inputType="numberDecimal"
+                        style="@style/QText">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="लाभ तारीख (Benefit Date)"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    app:errorEnabled="true"
+                    app:helperTextEnabled="false"
+                    android:layout_marginTop="3dp"
+                    android:layout_below="@+id/editJsyPaidAmtLayout"
+                    android:layout_marginHorizontal="10dp"
+                    android:id="@+id/editJsyBenefitDateLayout">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/editJsyBenefitDate"
+                        android:inputType="date"
+                        android:focusableInTouchMode="false"
+                        style="@style/QText">
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSavePregnancyInformation"
+                android:text="माहिती जतन करा (Save Information)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/pregnancyJsyDetailsLinearLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="70dp"
+                android:paddingVertical="15dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</LinearLayout>

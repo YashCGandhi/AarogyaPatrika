@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/childDetailLayout"
+    android:visibility="visible">
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddChild"
+        android:visibility="gone"
+        android:text="मुलाला जोडा (Add Child)"
+        android:layout_gravity="right"
+        app:cornerRadius="20dp"
+        android:layout_marginTop="5dp"
+        android:paddingVertical="10dp"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+        android:textSize="16dp"
+        app:icon="@drawable/ic_add_black_24dp"
+        android:textStyle="bold"
+        android:textAllCaps="false">
+    </com.google.android.material.button.MaterialButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textChild"
+        android:text="मूल (Child)"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"
+        android:paddingVertical="3dp"
+        style="@style/QText"
+        android:textStyle="bold">
+    </TextView>
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/childNameMultiSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"
+        android:text="मूल निवडा (Select Child)"
+        android:textSize="18dp"
+        android:textColorHint="@color/fullBlack"
+        android:textColor="@color/fullBlack">
+    </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/childInformationNestedScrollView"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/childDetailViewLayout"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textChildDetail"
+                android:text="मुलाचे तपशील (Child Details)"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/fullBlack"
+                android:paddingTop="5dp"
+                android:layout_marginTop="5dp">
+            </TextView>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/childSpinnerLinearLayout"
+                android:layout_below="@+id/textChildDetail" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fatherCouple"
+                    android:text="वडील (Father):"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    style="@style/QText"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/fatherNameMultiSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="वडील निवडा (Select Father)"
+                    android:textSize="18dp"
+                    android:textColorHint="@color/fullBlack"
+                    android:textColor="@color/fullBlack">
+                </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/motherCouple"
+                    android:text="आई (Mother):"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    style="@style/QText"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/motherNameMultiSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="आई निवडा (Select Mother)"
+                    android:textSize="18dp"
+                    android:textColorHint="@color/fullBlack"
+                    android:textColor="@color/fullBlack">
+                </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/newChildSpinnerLinearLayout"
+                android:layout_below="@+id/childSpinnerLinearLayout" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newFatherCouple"
+                    android:text="वडील (Father):"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    style="@style/QText"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/newFatherNameMultiSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="वडील निवडा (Select Father)"
+                    android:textSize="18dp"
+                    android:textColorHint="@color/fullBlack"
+                    android:textColor="@color/fullBlack">
+                </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newMotherCouple"
+                    android:text="आई (Mother):"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    style="@style/QText"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/newMotherNameMultiSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="आई निवडा (Select Mother)"
+                    android:textSize="18dp"
+                    android:textColorHint="@color/fullBlack"
+                    android:textColor="@color/fullBlack">
+                </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newChildMember"
+                    android:text="मूल (Child):"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="3dp"
+                    style="@style/QText"
+                    android:textStyle="bold">
+                </TextView>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/newChildNameMultiSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="मूल निवडा (Select Child)"
+                    android:textSize="18dp"
+                    android:textColorHint="@color/fullBlack"
+                    android:textColor="@color/fullBlack">
+                </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+
+            </LinearLayout>
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Mother Name"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--                app:errorEnabled="true"-->
+<!--                app:helperTextEnabled="false"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_below="@+id/newChildSpinnerLinearLayout"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:id="@+id/editMotherNameLayout">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:enabled="false"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/editMotherName"-->
+<!--                    android:inputType="textPersonName"-->
+<!--                    style="@style/QText">-->
+<!--                </com.google.android.material.textfield.TextInputEditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Father Name"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--                app:errorEnabled="true"-->
+<!--                app:helperTextEnabled="false"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_below="@+id/editMotherNameLayout"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:id="@+id/editFatherNameLayout">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:enabled="false"-->
+<!--                    android:id="@+id/editFatherName"-->
+<!--                    android:inputType="textPersonName"-->
+<!--                    style="@style/QText">-->
+<!--                </com.google.android.material.textfield.TextInputEditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Child Name"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--                app:errorEnabled="true"-->
+<!--                app:helperTextEnabled="false"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_below="@+id/newChildSpinnerLinearLayout"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:id="@+id/editChildNameLayout">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/editChildName"-->
+<!--                    android:inputType="textPersonName"-->
+<!--                    style="@style/QText">-->
+<!--                </com.google.android.material.textfield.TextInputEditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="चाईल्ड आरसीएच आयडी (Child RCH ID)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="3dp"
+                android:layout_below="@+id/newChildSpinnerLinearLayout"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editChildRCHLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editChildRCH"
+                    android:inputType="text"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textDPTB_OPVB_MR2_VitA2"
+                android:text="DPTB_OPVB_MR2_VitA2"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/editChildRCHLayout"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+
+
+            <LinearLayout
+                android:layout_below="@id/textDPTB_OPVB_MR2_VitA2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateDPTB_OPVB_MR2_VitA2" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddDPTB_OPVB_MR2_VitA2"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateDPTB_OPVB_MR2_VitA2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textMR1_VitA1"
+                android:text="MR1_VitA1"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/btnAddDPTB_OPVB_MR2_VitA2"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_below="@id/textMR1_VitA1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateMR1_VitA1" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddMR1_VitA1"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateMR1_VitA1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textOPV_3_IPV2_Penta3_Rota3"
+                android:text="OPV_3_IPV2_Penta3_Rota3"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/btnAddMR1_VitA1"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_below="@id/textOPV_3_IPV2_Penta3_Rota3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateOPV_3_IPV2_Penta3_Rota3" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddOPV_3_IPV2_Penta3_Rota3"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateOPV_3_IPV2_Penta3_Rota3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textOPV_2_Penta_2_Rota_2"
+                android:text="OPV_2_Penta_2_Rota_2"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/btnAddOPV_3_IPV2_Penta3_Rota3"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_below="@id/textOPV_2_Penta_2_Rota_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateOPV_2_Penta_2_Rota_2" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddOPV_2_Penta_2_Rota_2"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateOPV_2_Penta_2_Rota_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textOPV1_IPV1_Penta1_Rota1"
+                android:text="OPV1_IPV1_Penta1_Rota1"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/btnAddOPV_2_Penta_2_Rota_2"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_below="@id/textOPV1_IPV1_Penta1_Rota1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateOPV1_IPV1_Penta1_Rota1" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddOPV1_IPV1_Penta1_Rota1"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateOPV1_IPV1_Penta1_Rota1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textBCG"
+                android:text="BCG"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/btnAddOPV1_IPV1_Penta1_Rota1"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_below="@id/textBCG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateBCG" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddBCG"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateBCG"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textB2VIT"
+                android:text="B2VIT"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/btnAddBCG"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_below="@id/textB2VIT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateB2VIT" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddB2VIT"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateB2VIT"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textOPV"
+                android:text="OPV"
+                android:layout_marginHorizontal="10dp"
+                android:paddingVertical="3dp"
+                android:layout_below="@+id/btnAddB2VIT"
+                style="@style/QText"
+                android:textStyle="bold">
+            </TextView>
+
+            <LinearLayout
+                android:layout_below="@id/textOPV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/dateOPV" >
+
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddOPV"
+                android:text="तारीख जोडा (Add date)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/dateOPV"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingVertical="10dp"
+                android:layout_alignParentRight="true"
+                style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+                android:textSize="16dp"
+                app:icon="@drawable/ic_add_black_24dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+            <com.google.android.material.button.MaterialButton
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSaveChildInformation"
+            android:text="माहिती जतन करा (Save Information)"
+            app:cornerRadius="20dp"
+            android:layout_below="@+id/btnAddOPV"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:paddingHorizontal="70dp"
+            android:paddingVertical="15dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAllCaps="false">
+        </com.google.android.material.button.MaterialButton>
+
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</LinearLayout>

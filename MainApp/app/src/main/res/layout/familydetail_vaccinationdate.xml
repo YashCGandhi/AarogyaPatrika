@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+<com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Date"
+    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+    app:errorEnabled="true"
+    app:helperTextEnabled="false"
+    android:layout_marginTop="10dp"
+    android:layout_marginHorizontal="10dp"
+    android:id="@+id/editVaccinationDateLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editVaccinationDate"
+            android:inputType="date"
+            android:focusableInTouchMode="false"
+            style="@style/QText">
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+<!--</LinearLayout>-->

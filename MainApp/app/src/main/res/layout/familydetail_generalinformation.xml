@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/generalInformationNestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--<com.google.android.material.card.MaterialCardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    app:cardCornerRadius="3dp"-->
+<!--    app:cardUseCompatPadding="true"-->
+<!--    android:theme="@style/Theme.MaterialComponents.Light">-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayoutGeneralInformation"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textGeneralInformation"
+            android:text="General Information"
+            android:textStyle="bold"
+            android:textSize="22dp"
+            android:paddingTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/fullBlack"
+            android:layout_marginTop="5dp">
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="गाव"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:errorEnabled="true"
+            app:helperTextEnabled="false"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/textGeneralInformation"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/areaNameLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/areaNameEditText"
+                android:inputType="textPersonName"
+                style="@style/QText">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewToilet"
+            android:layout_below="@+id/areaNameLayout"
+            android:text="शौचालय"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="3dp"
+            style="@style/QText"
+            android:textStyle="bold">
+        </TextView>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/textViewToilet"
+            android:layout_marginTop="1dp"
+            android:id="@+id/radioGroupToilet"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonToiletYes"
+                android:text="आहे"
+                android:layout_marginHorizontal="10dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonToiletNo"
+                android:text="नाही"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewBPL"
+            android:layout_below="@+id/radioGroupToilet"
+            android:text="दारिद्र्य रेषेखाली"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="3dp"
+            style="@style/QText"
+            android:textStyle="bold">
+        </TextView>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/textViewBPL"
+            android:layout_marginTop="1dp"
+            android:id="@+id/radioGroupBpl"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonBplYes"
+                android:text="आहे"
+                android:layout_marginHorizontal="10dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonBplNo"
+                android:text="नाही"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewHouse"
+            android:layout_below="@+id/radioGroupBpl"
+            android:text="घर"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="3dp"
+            style="@style/QText"
+            android:textStyle="bold">
+        </TextView>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/textViewHouse"
+            android:layout_marginTop="1dp"
+            android:id="@+id/radioGroupHouse"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonHouseKaccha"
+                android:text="कच्चे"
+                android:layout_marginHorizontal="10dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonHousePakka"
+                android:text="पक्के"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewWater"
+            android:layout_below="@+id/radioGroupHouse"
+            android:text="पाणी पुरवठा"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="3dp"
+            style="@style/QText"
+            android:textStyle="bold">
+        </TextView>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/textViewWater"
+            android:layout_marginTop="1dp"
+            android:id="@+id/radioGroupWater"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonWaterPublic"
+                android:text="सार्वजनिक"
+                android:layout_marginHorizontal="10dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonWaterWell"
+                android:text="विहीर"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonWaterHandpump"
+                android:text="हातपंप"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonWaterBore"
+                android:text="बोअर"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewCaste"
+            android:layout_below="@+id/radioGroupWater"
+            android:text="प्रवर्ग अनुसूचित जाती/अनु.जमाती/इतर"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="3dp"
+            style="@style/QText"
+            android:textStyle="bold">
+        </TextView>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/textViewCaste"
+            android:layout_marginTop="1dp"
+            android:id="@+id/radioGroupCaste"
+            style="@style/Widget.AppCompat.CompoundButton.RadioButton">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonCasteSc"
+                android:text="प्रवर्ग अनुसूचित जाती"
+                android:layout_marginHorizontal="10dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonCasteSt"
+                android:text="अनु.जमाती"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButtonCasteOthers"
+                android:text="इतर"
+                android:layout_marginHorizontal="8dp"
+                android:padding="2dp"
+                style="@style/QText">
+            </RadioButton>
+        </RadioGroup>
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="घरातील एकूण सदस्य संख्या"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--            app:errorEnabled="true"-->
+<!--            app:helperTextEnabled="false"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:layout_below="@+id/radioGroupCaste"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:id="@+id/numberOfMembersLayout">-->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/editTextNumberOfMembers"-->
+<!--                android:inputType="number"-->
+<!--                style="@style/QText">-->
+<!--            </com.google.android.material.textfield.TextInputEditText>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="मोबाइल नंबर"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"-->
+<!--            app:errorEnabled="true"-->
+<!--            app:helperTextEnabled="false"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_below="@+id/numberOfMembersLayout"-->
+<!--            android:layout_marginHorizontal="10dp"-->
+<!--            android:id="@+id/mobileNumberLayout">-->
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/editTextMobileNumber"-->
+<!--                android:inputType="number"-->
+<!--                style="@style/QText">-->
+<!--            </com.google.android.material.textfield.TextInputEditText>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSaveGeneralInformation"
+            android:text="Save Information"
+            app:cornerRadius="20dp"
+            android:layout_below="@+id/radioGroupCaste"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:paddingHorizontal="70dp"
+            android:paddingVertical="15dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textAllCaps="false">
+        </com.google.android.material.button.MaterialButton>
+
+    </RelativeLayout>
+
+
+
+<!--</com.google.android.material.card.MaterialCardView>-->
+</androidx.core.widget.NestedScrollView>

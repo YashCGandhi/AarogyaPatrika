@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/familyDetailsLayoutFragmentContainer"
+    android:orientation="vertical">
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/informationSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        android:layout_marginHorizontal="10dp"
+        android:textSize="18dp"
+        android:textColorHint="@color/fullBlack"
+        android:textColor="@color/fullBlack">
+    </com.jaredrummler.materialspinner.MaterialSpinner>
+
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchMemberRelativeLayout"
+            android:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="सदस्याच्या नावाने शोधा (Search by member name)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                app:errorEnabled="true"
+                app:helperTextEnabled="false"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/editSearchByMemberNameLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editTextSearchByMemberName"
+                    android:inputType="textPersonName"
+                    style="@style/QText">
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSearchMember"
+                android:text="शोध (Search)"
+                app:cornerRadius="20dp"
+                android:layout_below="@+id/editSearchByMemberNameLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="70dp"
+                android:paddingVertical="15dp"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAllCaps="false">
+            </com.google.android.material.button.MaterialButton>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_below="@+id/btnSearchMember"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/memberSearchRecyclerView"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

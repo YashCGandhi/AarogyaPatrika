@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/myCardView"
+    android:id="@+id/noMethodCardLayout"
+    android:visibility="visible">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relLayoutNoMethod"
+        android:layout_below="@+id/radioMethod"
+        android:visibility="visible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textAddDate"
+            android:text="Other dates"
+            android:layout_marginHorizontal="10dp"
+            android:paddingVertical="3dp"
+            style="@style/QText"
+            android:textStyle="bold">
+        </TextView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date of visit"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:errorEnabled="true"
+            app:helperTextEnabled="false"
+            android:layout_marginTop="3dp"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/editVisitLayout"
+            android:layout_below="@id/textAddDate">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editVisit"
+                android:inputType="date"
+                android:focusableInTouchMode="false"
+                style="@style/QText">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date of group meeting"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            app:errorEnabled="true"
+            app:helperTextEnabled="false"
+            android:layout_marginTop="3dp"
+            android:layout_below="@+id/editVisitLayout"
+            android:layout_marginHorizontal="10dp"
+            android:id="@+id/editMeetingLayout">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editMeeting"
+                android:inputType="date"
+                android:focusableInTouchMode="false"
+                style="@style/QText">
+            </com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

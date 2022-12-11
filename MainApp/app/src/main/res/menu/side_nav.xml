@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_add_family"
+        android:title="Add Family"
+        android:icon="@drawable/ic_person_add_black_24dp">
+    </item>
+    <item
+        android:id="@+id/nav_family_detail"
+        android:title="Family Details"
+        android:icon="@drawable/ic_person_black_24dp">
+    </item>
+</menu>
