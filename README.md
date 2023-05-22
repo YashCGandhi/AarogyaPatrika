@@ -1,1 +1,1 @@
-# AarogyaPatrika
+# Aarogya Patrika
